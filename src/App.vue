@@ -22,4 +22,18 @@ body {
   color: $color-text;
   font-family: 'Almarai', sans-serif;
 }
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 1160px;
+}
+
+.ui-h1 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.25em;
+}
 </style>
