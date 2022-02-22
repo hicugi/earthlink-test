@@ -1,13 +1,17 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+    <br /><br /><br /><br /><br /><br />
+
+    <LoginBlock />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import LoginBlock from '../components/LoginBlock.vue'
 
 export default defineComponent({
-  name: 'Home'
+  name: 'Home',
+  components: { LoginBlock }
 })
 </script>
