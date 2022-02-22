@@ -1,28 +1,36 @@
-import Tabs from '../components/Tabs.vue';
-import './Tabs.scss';
+import Tabs from '../components/Tabs.vue'
 
 export default {
-  title: 'Example/Tabs',
+  title: 'Components/Tabs',
   component: Tabs,
   argTypes: {
-    tabsNames: { control: { type: 'array' } },
-    searchPlaceholder: { control: { type: 'text' } }
-  },
-};
+    items: { control: { type: 'array' } }
+  }
+}
 
-const Template = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
+const Template = (_, { argTypes }) => ({
+  props: Object.keys(argTypes),
   components: { Tabs },
-  // The story's `args` need to be mapped into the template through the `setup()` method
-  setup() {
-    return { args };
-  },
-  // And then the `args` are bound to your component with `v-bind="args"`
-  template: '<Tabs v-bind="args" />',
-});
+  template: `<Tabs v-bind="$props">
+    <template #users>
+      <div>I'm users</div>
+      </template>
+    <template #departmens>
+      <div>I'm departments</div>
+    </template>
+  </Tabs>`
+})
 
-export const TabsTemp = Template.bind({});
-TabsTemp.args = {
-  tabsNames: ['Users', 'Departments'],
-  searchPlaceholder: 'Search Users'
-};
+export const Default = Template.bind({})
+Default.args = {
+  items: [
+    {
+      label: 'Users',
+      name: 'users'
+    },
+    {
+      label: 'Departmens',
+      name: 'departmens'
+    }
+  ]
+}
