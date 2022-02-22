@@ -26,6 +26,8 @@ export default defineComponent({
   width: 100%;
   background: #ffffff;
   color: inherit;
+  font-size: 16px;
+  font-weight: 400;
   line-height: 18px;
   will-change: border-color;
   transition: linear 0.2s border-color;
