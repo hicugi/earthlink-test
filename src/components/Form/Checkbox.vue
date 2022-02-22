@@ -32,6 +32,9 @@ export default defineComponent({
 @import '../../scss/colors.scss';
 
 .c-formCheckbox {
+  $self: &;
+  
+  position: relative;
   display: flex;
 
   &__input {
@@ -68,10 +71,26 @@ export default defineComponent({
     display: block;
     font-size: 14px;
     line-height: 16px;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      outline: 2px solid $color-text;
+      content: '';
+    }
   }
 
-  &__input:focus ~ &__icon {
-    border-color: $color-primary;
+  &__input:focus {
+    ~ #{$self}__icon {
+      border-color: $color-primary;
+    }
+    ~ #{$self}__label::before {
+      display: block;
+    }
   }
   &__input:checked ~ &__icon {
     border-color: $color-primary;
