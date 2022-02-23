@@ -7,8 +7,8 @@ Create a simple application as on attached designs. For styles use Tailwindcss (
 - Please use some store manager (Vuex for Vue).
 - Use your creativity and the best practices in code. The more good ideas the better.
 
-Link to designs:
-https://www.figma.com/file/OcdGZNVhq0YVXsmQjhiZQF/Test-CAT-frontend-position?node-id=0%3A1
+Link to [demo](http://earthlink.webmaho.com/)
+Link to [designs](https://www.figma.com/file/OcdGZNVhq0YVXsmQjhiZQF/Test-CAT-frontend-position?node-id=0%3A1)
 
 ## Available scripts
 
