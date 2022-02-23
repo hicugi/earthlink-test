@@ -7,6 +7,7 @@
     <form :class="formClass" @submit.prevent="handleSubmit">
       <FormField class="c-loginBlock-form__field" label="Email">
         <FormInput
+          ref="inputEmail"
           v-model="email"
           :disabled="isLoading"
           type="email"
@@ -99,6 +100,9 @@ export default defineComponent({
 
         .catch(error => {
           this.errorMessage = error.message
+          setTimeout(() => {
+            this.$refs.inputEmail.$el.focus()
+          })
         })
         .finally(() => {
           this.isLoading = false
