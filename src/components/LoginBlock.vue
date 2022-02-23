@@ -58,7 +58,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import store from '../store/index'
+import store from '../store'
 import FormField from './Form/Field.vue'
 import FormInput from './Form/Input.vue'
 import FormCheckbox from './Form/Checkbox.vue'
@@ -92,6 +92,11 @@ export default defineComponent({
 
       store
         .dispatch('login', { email, password })
+
+        .then(() => {
+          this.$router.push({ name: 'dashboard' })
+        })
+
         .catch(error => {
           this.errorMessage = error.message
         })
@@ -194,8 +199,16 @@ export default defineComponent({
 
     &__extra {
       margin: 15px 0 25px;
-      display: flex;
-      justify-content: space-between;
+
+      @media screen and (max-width: 339.9998px) {
+        > *:first-child {
+          margin-bottom: 8px;
+        }
+      }
+      @media screen and (min-width: 340px) {
+        display: flex;
+        justify-content: space-between;
+      }
     }
     &__footer {
       padding-top: 15px;

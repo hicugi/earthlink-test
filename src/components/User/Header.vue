@@ -4,12 +4,14 @@
     <div class="c-userHeader__main">
       <BreadCrumbs :items="breadCrumbs" />
     </div>
-    <div class="c-userHeader__meh" />
+
+    <div class="c-userHeader__meh" @click="handleLogout" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import store from '../../store'
 import BreadCrumbs from '../BreadCrumbs.vue'
 
 export default defineComponent({
@@ -17,7 +19,15 @@ export default defineComponent({
 
   data: () => ({
     breadCrumbs: [{ text: 'Home', link: '/' }, { text: 'Projects' }]
-  })
+  }),
+
+  methods: {
+    handleLogout() {
+      store.dispatch('logout').then(() => {
+        this.$router.push({ name: 'home' })
+      })
+    }
+  }
 })
 </script>
 
