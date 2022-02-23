@@ -22,12 +22,12 @@ export default defineComponent({
     },
     variant: {
       type: String,
-      default: 'deafult'
+      default: 'default'
     },
     block: Boolean
   },
   computed: {
-    className (): ClassName {
+    className(): ClassName {
       const v = 'c-uiBtn'
       return {
         [v]: true,
@@ -46,6 +46,7 @@ export default defineComponent({
 .c-uiBtn {
   border: none;
   display: inline-block;
+  font-family: inherit;
 
   &_block {
     display: block;
@@ -53,6 +54,10 @@ export default defineComponent({
   }
 
   &_variant {
+    &-default {
+      background: #e9eef5;
+      color: $color-primary;
+    }
     &-primary {
       background-color: $color-primary;
       color: #ffffff;
@@ -60,10 +65,16 @@ export default defineComponent({
   }
 
   &_size {
+    &-medium {
+      padding: 10px 13px 9px;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 20px;
+    }
     &-large {
       padding: 14px 15px 12px;
       border-radius: 6px;
-      font-family: inherit;
       font-size: 16px;
       font-weight: 700;
       line-height: 18px;

@@ -1,0 +1,154 @@
+@import '../../scss/colors.scss';
+
+.c-cardItem {
+  padding: 16px var(--side-gap);
+
+  &__header {
+    display: grid;
+    grid-template: '. .' / 46px 1fr;
+    grid-gap: 12px;
+  }
+
+  &__icon {
+    border-radius: 6px;
+    background: no-repeat center;
+    width: 46px;
+    height: 46px;
+
+    &_success {
+      background-image: url(/assets/card-icon-success.svg);
+      background-color: $color-success;
+    }
+    &_warning {
+      background-image: url(/assets/card-icon-warning.svg);
+      background-color: $color-warning;
+    }
+  }
+  &__info {
+    position: relative;
+    padding-top: 5px;
+    min-height: 46px;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    line-height: 16px;
+    color: #48525f;
+    &_without-subtitle {
+      justify-content: center;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    font-size: inherit;
+    font-weight: 400;
+    line-height: inherit;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    span {
+      color: #9fa6b1;
+    }
+    strong {
+      position: relative;
+      font-weight: 700;
+
+      &::before {
+        position: absolute;
+        left: 100%;
+        top: 50%;
+        margin-left: 7px;
+        margin-top: -1px;
+        transform: translateY(-50%);
+        width: 14px;
+        height: 14px;
+        background: url(/assets/star.svg);
+      }
+    }
+
+    &_favorite strong::before {
+      content: '';
+    }
+  }
+
+  &__subtitle {
+    margin-top: 20px;
+  }
+  &__type {
+    margin-right: 4px;
+    strong {
+      color: $color-primary;
+      font-weight: 700;
+    }
+  }
+
+  &__description {
+    margin: 0;
+    color: #9fa6b1;
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  &__text_warning {
+    color: $color-warning;
+  }
+
+  &__body {
+    padding-top: 13px;
+  }
+  &__content {
+    margin: 0;
+    font-size: 14px;
+    line-height: 16px;
+    color: #9fa6b1;
+
+    & + * {
+      margin-top: 30px;
+    }
+  }
+
+  &-stats {
+    $gap: 24px;
+
+    margin: 20px #{-$gap / 2} 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    color: #48525f;
+
+    &__item {
+      padding-left: #{$gap / 2};
+      padding-right: #{$gap / 2};
+      display: flex;
+      align-items: center;
+    }
+
+    &__icon {
+      margin-right: 8px;
+      width: 20px;
+      height: 20px;
+      display: block;
+      background: no-repeat center;
+      
+      &_likes {
+        background-image: url(/assets/stats-heart.svg);
+      }
+      &_views {
+        background-image: url(/assets/stats-eye.svg);
+      }
+      &_followers {
+        background-image: url(/assets/stats-users.svg);
+      }
+    }
+    &__value {
+      display: block;
+      color: #48525f;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16px;
+    }
+  }
+}

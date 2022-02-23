@@ -11,7 +11,7 @@
 
       <Tabs :items="tabNav">
         <template #employees>
-          <div>working on</div>
+          <EmployeesBoard />
         </template>
 
         <template #departments>
@@ -27,9 +27,10 @@ import { defineComponent } from 'vue'
 import UserHeader from '../components/User/Header.vue'
 import FormSearch from '../components/Form/Search.vue'
 import Tabs from '../components/Tabs.vue'
+import EmployeesBoard from '../components/EmployeesBoard.vue'
 
 export default defineComponent({
-  components: { UserHeader, FormSearch, Tabs },
+  components: { UserHeader, FormSearch, Tabs, EmployeesBoard },
 
   data: () => ({
     searchValue: '',
