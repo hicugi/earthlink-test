@@ -101,6 +101,7 @@ export default defineComponent({
         .catch(error => {
           this.errorMessage = error.message
           setTimeout(() => {
+            // @ts-ignore
             this.$refs.inputEmail.$el.focus()
           })
         })
