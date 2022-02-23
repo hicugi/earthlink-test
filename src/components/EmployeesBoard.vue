@@ -110,21 +110,35 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+@import '../scss/variables.scss';
+
 .p-employeesBoard {
   padding-bottom: 30px;
   display: grid;
-  grid-template: '. . .' / 1fr 1fr 304px;
-  grid-gap: 20px 48px;
+  grid-template: '.' / 1fr;
+  grid-gap: 20px 15px;
   align-items: start;
 
-  &__card-middle {
-    --side-gap: 45px;
-  }
   &__card-footer {
     padding-top: 6px;
     display: grid;
     grid-template: '.' / 1fr;
     grid-gap: 16px;
+  }
+
+  @media screen and (min-width: 680px) {
+    grid-template: '. .' / 1fr 1fr;
+  }
+  @media screen and (min-width: 980px) {
+    grid-template: '. . .' / 1fr 1fr 280px;
+  }
+  @media screen and (min-width: #{$width-container}) {
+    grid-template: '. . .' / 1fr 1fr 304px;
+    grid-gap: 20px 48px;
+
+    &__card-middle {
+      --side-gap: 45px;
+    }
   }
 }
 </style>

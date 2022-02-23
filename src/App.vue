@@ -5,6 +5,7 @@
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&display=swap');
 @import './scss/colors.scss';
+@import './scss/variables.scss';
 
 *,
 *::before,
@@ -19,6 +20,7 @@ body {
 }
 
 body {
+  min-width: 320px;
   color: $color-text;
   font-family: 'Almarai', sans-serif;
 }
@@ -28,7 +30,7 @@ body {
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
-  max-width: 1160px;
+  max-width: $width-container;
 }
 
 .ui-h1 {
